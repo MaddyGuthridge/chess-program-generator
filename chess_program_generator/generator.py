@@ -42,7 +42,6 @@ def show_board(board: chess.Board, indent: str):
 def recursive_generate(depth_remaining: int, board: chess.Board):
     print()
     indent = TAB * len(board.move_stack)
-    indent_if = TAB * (len(board.move_stack) + 1)
 
     # If the game is finished, we should tell the user what the outcome was
     # Need to do this before the depth check, since otherwise the user will
