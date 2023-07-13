@@ -7,6 +7,9 @@ license = "MIT"
 readme = "README.md"
 packages = [{include = "chess_program_generator"}]
 
+[tool.poetry.scripts]
+chess_program_generator = 'chess_program_generator:main'
+
 [tool.poetry.dependencies]
 python = "^3.11"
 chess = "^1.9.4"
