@@ -28,13 +28,16 @@ classifiers = [
 ]
 include = ["py.typed"]
 
+[tool.poetry.urls]
+"Online Documentation" = "https://github.com/MiguelGuthridge/chess-program-generator"
+"Bug Tracker" = "https://github.com/MiguelGuthridge/chess-program-generator/issues"
+
 [tool.poetry.scripts]
 chess_program_generator = 'chess_program_generator:main'
 
 [tool.poetry.dependencies]
 python = "^3.9"
 chess = "^1.9.4"
-
 
 [tool.poetry.group.dev.dependencies]
 mypy = "^1.4.1"
