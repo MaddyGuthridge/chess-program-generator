@@ -7,11 +7,32 @@ license = "MIT"
 readme = "README.md"
 packages = [{include = "chess_program_generator"}]
 
+repository = "https://github.com/MiguelGuthridge/chess-program-generator"
+
+keywords = [
+    "chess",
+    "generator",
+    "cli",
+]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Intended Audience :: Education",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Development Status :: 5 - Production/Stable",
+    "Programming Language :: Python",
+    "Topic :: Games/Entertainment :: Board Games",
+    "Topic :: Software Development :: Code Generators",
+    "Typing :: Typed",
+]
+include = ["py.typed"]
+
 [tool.poetry.scripts]
 chess_program_generator = 'chess_program_generator:main'
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.9"
 chess = "^1.9.4"
 
 
