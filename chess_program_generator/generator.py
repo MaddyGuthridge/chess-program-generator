@@ -3,7 +3,7 @@ import chess.pgn
 
 
 # 4 spaces for indentation
-INDENT_STR = ' ' * 4
+TAB = ' ' * 4
 
 
 SQUARE_WHITE = '◽'
@@ -41,8 +41,8 @@ def show_board(board: chess.Board, indent: str):
 
 def recursive_generate(depth_remaining: int, board: chess.Board):
     print()
-    indent = INDENT_STR * len(board.move_stack)
-    indent_if = INDENT_STR * (len(board.move_stack) + 1)
+    indent = TAB * len(board.move_stack)
+    indent_if = TAB * (len(board.move_stack) + 1)
 
     # If the game is finished, we should tell the user what the outcome was
     # Need to do this before the depth check, since otherwise the user will
@@ -80,7 +80,7 @@ def recursive_generate(depth_remaining: int, board: chess.Board):
         print(f'{indent}{iffy} player == "{board.san_and_push(move)}":')
 
         # Show the state of the board
-        show_board(board, indent_if)
+        show_board(board, indent + TAB)
 
         # Recurse to generate more moves
         recursive_generate(depth_remaining - 1, board)
@@ -88,6 +88,11 @@ def recursive_generate(depth_remaining: int, board: chess.Board):
         # Unmake move
         board.pop()
         first_if = False
+
+    # Add a check for illegal inputs
+    print(f'{indent}else:')
+    print(f'{indent}    print("Illegal move!")')
+    print(f'{indent}    exit(2)')
 
 
 def generate(depth: int):
