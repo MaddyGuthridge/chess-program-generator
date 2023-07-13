@@ -10,6 +10,12 @@ SQUARE_WHITE = '◽'
 SQUARE_BLACK = '◾'
 
 
+COLOR_NAMES = {
+    chess.WHITE: 'White',
+    chess.BLACK: 'Black',
+}
+
+
 def get_background_color(row: int, col: int) -> str:
     if (row % 2 + col % 2) % 2 == 1:
         return SQUARE_BLACK
@@ -37,6 +43,19 @@ def recursive_generate(depth_remaining: int, board: chess.Board):
     print()
     indent = INDENT_STR * len(board.move_stack)
     indent_if = INDENT_STR * (len(board.move_stack) + 1)
+
+    # If the game is finished, we should tell the user what the outcome was
+    # Need to do this before the depth check, since otherwise the user will
+    # get that error instead
+    if board.is_game_over(claim_draw=True):
+        print(f'{indent}print("Game over!")')
+        if board.is_checkmate():
+            winner = not board.turn
+            print(f'{indent}print("{COLOR_NAMES[winner]} wins by checkmate")')
+        else:
+            print(f'{indent}print("It\'s a draw!")')
+        return
+
     # If there is no more recursion required, give an error message
     # We can manually expand on required branches later
     if depth_remaining == 0:
@@ -53,13 +72,6 @@ def recursive_generate(depth_remaining: int, board: chess.Board):
     print(f"{indent}player = input()")
     print()
 
-    legal_moves = board.legal_moves
-    # If there are none, we should tell the user what the outcome of the game
-    # was
-    if legal_moves.count() == 0:
-        ...
-        # TODO
-
     first_if = True
     # Otherwise for every possible response
     for move in board.legal_moves:
@@ -75,6 +87,7 @@ def recursive_generate(depth_remaining: int, board: chess.Board):
 
         # Unmake move
         board.pop()
+        first_if = False
 
 
 def generate(depth: int):
