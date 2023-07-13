@@ -18,3 +18,8 @@ To generate the runnable chess program:
 To run the produced chess program
 
 `python chess.py`
+
+## Pre-generated program
+
+A pre-compiled program, generated to a depth of 4 ply, can be downloaded from
+the releases page on GitHub.
