@@ -59,8 +59,9 @@ def recursive_generate(depth_remaining: int, board: chess.Board):
     # We can manually expand on required branches later
     if depth_remaining == 0:
         print(
-            f'{indent}print("ERROR: this position has not been generated yet! '
-            f'Please open an issue on the project GitHub page.")'
+            f'{indent}print("ERROR: moves for this position have not been '
+            f'generated yet! Please open an issue on the project GitHub '
+            f'page.")'
         )
         print(f'{indent}exit(1)')
         return
