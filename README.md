@@ -19,6 +19,15 @@ To run the produced chess program
 
 `python chess.py`
 
+For example:
+
+```sh
+$ chess-program-generator 6 > chess.py
+$ # Several hours later
+$ wc -l chess.py
+1509877878 chess.py
+```
+
 ## Pre-generated program
 
 A pre-compiled program, generated to a depth of 4 ply, can be downloaded from
