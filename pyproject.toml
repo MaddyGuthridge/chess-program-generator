@@ -2,12 +2,12 @@
 name = "chess-program-generator"
 version = "1.0.0"
 description = "A program to generate a chess program. Since chess is such a complex game, it is impossible to write a program for it by hand."
-authors = ["Miguel Guthridge <hdsq@outlook.com.au>"]
+authors = ["Maddy Guthridge <hello@maddyguthridge.com>"]
 license = "MIT"
 readme = "README.md"
 packages = [{include = "chess_program_generator"}]
 
-repository = "https://github.com/MiguelGuthridge/chess-program-generator"
+repository = "https://github.com/MaddyGuthridge/chess-program-generator"
 
 keywords = [
     "chess",
@@ -29,8 +29,8 @@ classifiers = [
 include = ["py.typed"]
 
 [tool.poetry.urls]
-"Online Documentation" = "https://github.com/MiguelGuthridge/chess-program-generator"
-"Bug Tracker" = "https://github.com/MiguelGuthridge/chess-program-generator/issues"
+"Online Documentation" = "https://github.com/MaddyGuthridge/chess-program-generator"
+"Bug Tracker" = "https://github.com/MaddyGuthridge/chess-program-generator/issues"
 
 [tool.poetry.scripts]
 chess_program_generator = 'chess_program_generator:main'
