@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "chess-program-generator"
-version = "1.0.0"
+version = "1.0.1"
 description = "A program to generate a chess program. Since chess is such a complex game, it is impossible to write a program for it by hand."
 authors = ["Maddy Guthridge <hello@maddyguthridge.com>"]
 license = "MIT"
